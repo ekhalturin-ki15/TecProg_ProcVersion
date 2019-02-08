@@ -62,3 +62,75 @@ void Filippov::LinkedList_Output(LinkedList &obj, ofstream &fout)
 		current = current->Next;
 	}
 }
+
+void Filippov::Sort_List(LinkedList &obj)
+{
+	if (obj.SizeList < 2)
+		return;
+
+	Node *current = obj.First;
+
+	bool flag = false;
+
+	do
+	{
+		current = obj.First;
+		flag = false;
+		for (size_t i = 0; i < (obj.SizeList - 1); ++i)
+		{
+			if (Compare(current->language, current->Next->language))
+			{
+				Swap(obj, current, current->Next);
+				flag = true;
+			}
+			else
+			{
+				current = current->Next;
+			}
+		}
+	} while (flag);
+}
+
+void Filippov::Swap(LinkedList &obj, Node *first, Node *second)
+{
+	if ((first->Prev == NULL) && (second->Next == NULL))//если в списке всего 2 элемента, но нам приспичило поменять их местами
+	{
+		obj.First = second;
+		obj.Last = first;
+		first->Prev = second;
+		second->Next = first;
+		first->Next = NULL;
+		second->Prev = NULL;
+		return;
+	}
+	if ((first->Prev == NULL) && (second->Next != NULL))//если мы меняем местами первый и второй элемент списка, в котором 3 и более элементов !(first->Prev)
+	{
+		first->Next = second->Next;
+		first->Prev = second;
+		second->Next->Prev = first;
+		second->Next = first;
+		second->Prev = NULL;
+		obj.First = second;
+		return;
+	}
+	if ((first->Prev != NULL) && (second->Next == NULL))//если мы меняем местами предпоследний и последний элемент списка, в котором 3 и более элементов !(second->Next)
+	{
+		second->Prev = first->Prev;
+		first->Prev = second;
+		first->Next = NULL;
+		second->Next = first;
+		second->Prev->Next = second;
+		obj.Last = first;
+		return;
+	}
+	if ((first->Prev != NULL) && (second->Next != NULL))//если мы меняем каких-то два элемента, находящихся в середине списка, в котором 4 и более элемента(например второй и третий, если в списке 4 элемента)
+	{
+		first->Next = second->Next;
+		second->Prev = first->Prev;
+		second->Next = first;
+		first->Prev = second;
+		second->Prev->Next = second;
+		first->Next->Prev = first;
+		return;
+	}
+}

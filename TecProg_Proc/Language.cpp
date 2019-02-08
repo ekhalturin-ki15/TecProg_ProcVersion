@@ -58,6 +58,11 @@ void Filippov::Language_Output(Language *obj, ofstream &fout)
 		<< ", The number of references of this language on the Internet = " << obj->reference << endl;
 }
 
+bool Filippov::Compare(Language *first, Language *second)
+{
+	return Past_Years(first) < Past_Years(second);
+}
+
 int Filippov::Past_Years(Language *obj)
 {
 	time_t now = time(NULL);
