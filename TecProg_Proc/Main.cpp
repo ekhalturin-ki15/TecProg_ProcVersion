@@ -27,6 +27,8 @@ int main(int argc, char* argv[])//int argc, char* argv[]
 	Sort_List(list);
 	LinkedList_Output(list, fout);
 
+	Only_Procedural(list, fout);
+
 	Clear(list);
 	fout << "Empty container." << endl;
 	LinkedList_Output(list, fout);

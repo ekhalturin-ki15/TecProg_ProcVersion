@@ -57,5 +57,16 @@ The number of years that have passed since the year the language was created = 1
 9: It is Object-oriented programming language: Inheritance is multiple, Year of development = 2009, The number of references of this language on the Internet = 428
 The number of years that have passed since the year the language was created = 10
 
+Only Procedural languages.
+1: It is Procedural programming language: Abstract data types is present, Year of development = 1979, The number of references of this language on the Internet = 1234
+2: 
+3: It is Procedural programming language: Abstract data types is missing, Year of development = 1990, The number of references of this language on the Internet = 987
+4: 
+5: 
+6: 
+7: 
+8: 
+9: 
+
 Empty container.
 Container contains 0 elements.
