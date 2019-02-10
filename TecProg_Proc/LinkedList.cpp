@@ -56,6 +56,8 @@ void Filippov::LinkedList_Output(LinkedList &obj, ofstream &fout)
 	{
 		fout << i + 1 << ": ";
 		Language_Output(current->language, fout);
+		fout << "The number of years that have passed since the year the language was created = "
+			<< Past_Years(current->language) << endl << endl;
 		current = current->Next;
 	}
 	fout << endl;
