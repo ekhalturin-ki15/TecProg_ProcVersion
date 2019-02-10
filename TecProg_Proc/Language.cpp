@@ -46,6 +46,11 @@ void Filippov::Language_Output(Language *obj, ofstream &fout)
 	fout << "Year of development = " << obj->year_of_development << endl;
 }
 
+bool Filippov::Compare(Language *first, Language *second)
+{
+	return Past_Years(first) < Past_Years(second);
+}
+
 int Filippov::Past_Years(Language *obj)
 {
 	time_t now = time(NULL);
