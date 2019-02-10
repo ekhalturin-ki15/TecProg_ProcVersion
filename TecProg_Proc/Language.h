@@ -3,7 +3,6 @@
 
 #include "Procedural.h"
 #include "OOP.h"
-#include "Functional.h"
 
 namespace Filippov
 {
@@ -16,13 +15,10 @@ namespace Filippov
 			FUNCTIONAL
 		} key;
 		unsigned short int year_of_development;
-		int reference;
 	};
 
 	Language* Language_Input(ifstream &fin);
 	void Language_Output(Language *obj, ofstream &fout);
-	int Past_Years(Language *obj);
-	bool Compare(Language *first, Language *second);
 }
 
 #endif // !LANGUAGE_H

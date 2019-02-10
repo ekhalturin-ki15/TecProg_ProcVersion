@@ -23,11 +23,7 @@ int main(int argc, char* argv[])//int argc, char* argv[]
 	fout << "Filled container." << endl;
 	LinkedList_Output(list, fout);
 
-	fout << endl << "Sorted Linked List." << endl;
-	Sort_List(list);
-	LinkedList_Output(list, fout);
 
-	Only_Procedural(list, fout);
 
 	Clear(list);
 	fout << "Empty container." << endl;
