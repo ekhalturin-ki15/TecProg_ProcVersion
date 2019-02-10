@@ -18,7 +18,6 @@ void Filippov::Clear(LinkedList &obj)
 		--obj.SizeList;
 	}
 	obj.First = Temp;
-	delete Temp;
 }
 
 void Filippov::LinkedList_Input(LinkedList &obj, ifstream &fin)
