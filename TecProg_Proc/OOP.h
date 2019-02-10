@@ -12,8 +12,7 @@ namespace Filippov
 		enum lang
 		{
 			PROCEDURAL,
-			OOP,
-			FUNCTIONAL
+			OOP
 		} key;
 		unsigned short int year_of_development;
 		enum inheritance
