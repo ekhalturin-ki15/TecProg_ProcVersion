@@ -3,6 +3,7 @@
 
 #include "Procedural.h"
 #include "OOP.h"
+#include "Functional.h"
 
 namespace Filippov
 {
