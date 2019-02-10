@@ -11,16 +11,15 @@ namespace Filippov
 		enum lang
 		{
 			PROCEDURAL,
-			OOP,
-			FUNCTIONAL
+			OOP
 		} key;
 		unsigned short int year_of_development;
 	};
 
 	Language* Language_Input(ifstream &fin);
 	void Language_Output(Language *obj, ofstream &fout);
-	int Past_Years(Language *obj);
 	bool Compare(Language *first, Language *second);
+	int Past_Years(Language *obj);
 }
 
 #endif // !LANGUAGE_H
