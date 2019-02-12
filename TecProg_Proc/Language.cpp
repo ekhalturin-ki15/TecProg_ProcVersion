@@ -11,6 +11,7 @@ Filippov::Language* Filippov::Language_Input(ifstream &fin)
 	unsigned short int temp;
 	fin >> temp;
 	fin >> language->year_of_development;
+	fin >> language->reference;
 	switch (temp)
 	{
 	case 1:
