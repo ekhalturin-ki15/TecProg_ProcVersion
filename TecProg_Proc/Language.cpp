@@ -1,4 +1,6 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include "Language.h"
+#include <ctime>
 
 Filippov::Language* Filippov::Language_Input(ifstream &fin)
 {
@@ -52,4 +54,16 @@ void Filippov::Language_Output(Language *obj, ofstream &fout)
 		return;
 	}
 	fout << "Year of development = " << obj->year_of_development << endl;
+}
+
+bool Filippov::Compare(Language *first, Language *second)
+{
+	return Past_Years(first) < Past_Years(second);
+}
+
+int Filippov::Past_Years(Language *obj)
+{
+	time_t now = time(NULL);
+	tm* localtm = localtime(&now);
+	return 1900 + localtm->tm_year - obj->year_of_development;
 }
