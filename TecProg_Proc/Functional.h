@@ -16,6 +16,7 @@ namespace Filippov
 			FUNCTIONAL
 		} key;
 		unsigned short int year_of_development;
+		int reference;
 		bool lazy_calculations;
 		enum typification
 		{

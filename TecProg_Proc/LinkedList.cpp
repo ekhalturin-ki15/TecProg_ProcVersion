@@ -135,13 +135,13 @@ void Filippov::Swap(LinkedList &obj, Node *first, Node *second)
 		return;
 	}
 }
-	fout << endl;
-}
+
+
 
 void Filippov::Only_Procedural(LinkedList &obj, ofstream &fout)
 {
 	Node *current = obj.First;
-	fout << "Only Procedural languages." << endl;
+	fout << endl << "Only Procedural languages." << endl;
 
 	for (size_t i = 0; i < obj.SizeList; i++)
 	{
@@ -156,4 +156,5 @@ void Filippov::Only_Procedural(LinkedList &obj, ofstream &fout)
 		}
 		current = current->Next;
 	}
+	fout << endl;
 }

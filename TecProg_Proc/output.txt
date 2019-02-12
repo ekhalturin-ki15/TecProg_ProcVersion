@@ -1,31 +1,50 @@
 Filled container.
-Container contains 6 elements.
-1: It is Object-oriented programming language: Inheritance is single, Year of development = 1998
+Container contains 8 elements.
+1: It is Object-oriented programming language: Inheritance is single, Year of development = 1998, The number of references of this language on the Internet = 123
 The number of years that have passed since the year the language was created = 21
-2: It is Procedural programming language: Abstract data types is missing, Year of development = 1990
+2: It is Procedural programming language: Abstract data types is missing, Year of development = 1990, The number of references of this language on the Internet = 987
 The number of years that have passed since the year the language was created = 29
-3: It is Procedural programming language: Abstract data types is present, Year of development = 1979
+3: It is Procedural programming language: Abstract data types is present, Year of development = 1979, The number of references of this language on the Internet = 345
 The number of years that have passed since the year the language was created = 40
-4: It is Object-oriented programming language: Inheritance is interface, Year of development = 1989
+4: It is Object-oriented programming language: Inheritance is interface, Year of development = 1989, The number of references of this language on the Internet = 678
 The number of years that have passed since the year the language was created = 30
-5: It is Object-oriented programming language: Inheritance is single, Year of development = 2000
+5: It is Object-oriented programming language: Inheritance is single, Year of development = 2000, The number of references of this language on the Internet = 479
 The number of years that have passed since the year the language was created = 19
-6: It is Object-oriented programming language: Inheritance is multiple, Year of development = 2009
+6: It is Object-oriented programming language: Inheritance is multiple, Year of development = 2009, The number of references of this language on the Internet = 562
 The number of years that have passed since the year the language was created = 10
+7: It is Functional programming language: Support "lazy" calculations is present, Typification is strict, Year of development = 2001, The number of references of this language on the Internet = 7346
+The number of years that have passed since the year the language was created = 18
+8: It is Functional programming language: Support "lazy" calculations is missing, Typification is dynamic, Year of development = 2002, The number of references of this language on the Internet = 926
+The number of years that have passed since the year the language was created = 17
 
 Sorted Linked List.
-Container contains 6 elements.
-1: It is Procedural programming language: Abstract data types is present, Year of development = 1979
+Container contains 8 elements.
+1: It is Procedural programming language: Abstract data types is present, Year of development = 1979, The number of references of this language on the Internet = 345
 The number of years that have passed since the year the language was created = 40
-2: It is Object-oriented programming language: Inheritance is interface, Year of development = 1989
+2: It is Object-oriented programming language: Inheritance is interface, Year of development = 1989, The number of references of this language on the Internet = 678
 The number of years that have passed since the year the language was created = 30
-3: It is Procedural programming language: Abstract data types is missing, Year of development = 1990
+3: It is Procedural programming language: Abstract data types is missing, Year of development = 1990, The number of references of this language on the Internet = 987
 The number of years that have passed since the year the language was created = 29
-4: It is Object-oriented programming language: Inheritance is single, Year of development = 1998
+4: It is Object-oriented programming language: Inheritance is single, Year of development = 1998, The number of references of this language on the Internet = 123
 The number of years that have passed since the year the language was created = 21
-5: It is Object-oriented programming language: Inheritance is single, Year of development = 2000
+5: It is Object-oriented programming language: Inheritance is single, Year of development = 2000, The number of references of this language on the Internet = 479
 The number of years that have passed since the year the language was created = 19
-6: It is Object-oriented programming language: Inheritance is multiple, Year of development = 2009
+6: It is Functional programming language: Support "lazy" calculations is present, Typification is strict, Year of development = 2001, The number of references of this language on the Internet = 7346
+The number of years that have passed since the year the language was created = 18
+7: It is Functional programming language: Support "lazy" calculations is missing, Typification is dynamic, Year of development = 2002, The number of references of this language on the Internet = 926
+The number of years that have passed since the year the language was created = 17
+8: It is Object-oriented programming language: Inheritance is multiple, Year of development = 2009, The number of references of this language on the Internet = 562
 The number of years that have passed since the year the language was created = 10
+
+Only Procedural languages.
+1: It is Procedural programming language: Abstract data types is present, Year of development = 1979, The number of references of this language on the Internet = 345
+2: 
+3: It is Procedural programming language: Abstract data types is missing, Year of development = 1990, The number of references of this language on the Internet = 987
+4: 
+5: 
+6: 
+7: 
+8: 
+
 Empty container.
 Container contains 0 elements.
