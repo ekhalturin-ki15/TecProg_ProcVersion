@@ -55,9 +55,9 @@ void Filippov::LinkedList_Output(LinkedList &obj, ofstream &fout)
 	for (size_t i = 0; i < obj.SizeList; i++)
 	{
 		fout << i + 1 << ": ";
-		Language_Output(current->language, fout);
+		Language_Output(*current->language, fout);
 		fout << "The number of years that have passed since the year the language was created = "
-			<< Past_Years(current->language) << endl;
+			<< Past_Years(*current->language) << endl;
 		current = current->Next;
 	}
 }
@@ -148,7 +148,7 @@ void Filippov::Only_Procedural(LinkedList &obj, ofstream &fout)
 		fout << i + 1 << ": ";
 		if (current->language->key == Language::lang::PROCEDURAL)
 		{
-			Language_Output(current->language, fout);
+			Language_Output(*current->language, fout);
 		}
 		else
 		{

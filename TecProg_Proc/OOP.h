@@ -25,8 +25,8 @@ namespace Filippov
 		} number;
 	};
 
-	Object_oriented* Object_oriented_Input(Object_oriented &obj, ifstream &fin);
-	void Object_oriented_Output(Object_oriented *obj, ofstream &fout);
+	void Object_oriented_Input(Object_oriented &obj, ifstream &fin);
+	void Object_oriented_Output(Object_oriented &obj, ofstream &fout);
 }
 
 #endif // !OOP_H

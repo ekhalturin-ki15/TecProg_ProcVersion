@@ -20,9 +20,9 @@ namespace Filippov
 	};
 
 	Language* Language_Input(ifstream &fin);
-	void Language_Output(Language *obj, ofstream &fout);
-	int Past_Years(Language *obj);
-	bool Compare(Language *first, Language *second);
+	void Language_Output(Language &obj, ofstream &fout);
+	int Past_Years(Language &obj);////////
+	bool Compare(Language *first, Language *second);////////////
 }
 
 #endif // !LANGUAGE_H

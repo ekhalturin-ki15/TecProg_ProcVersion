@@ -1,6 +1,6 @@
 #include "OOP.h"
 
-Filippov::Object_oriented * Filippov::Object_oriented_Input(Object_oriented &obj, ifstream &fin)
+void Filippov::Object_oriented_Input(Object_oriented &obj, ifstream &fin)
 {
 	unsigned short int temp;
 	fin >> temp;
@@ -8,22 +8,22 @@ Filippov::Object_oriented * Filippov::Object_oriented_Input(Object_oriented &obj
 	{
 	case 1:
 		obj.number = Object_oriented::inheritance::SINGLE;
-		return &obj;
+		break;
 	case 2:
 		obj.number = Object_oriented::inheritance::MULTIPLE;
-		return &obj;
+		break;
 	case 3:
 		obj.number = Object_oriented::inheritance::INTERFACE;
-		return &obj;
+		break;
 	default:
-		return NULL;
+		break;
 	}
 }
 
-void Filippov::Object_oriented_Output(Object_oriented *obj, ofstream &fout)
+void Filippov::Object_oriented_Output(Object_oriented &obj, ofstream &fout)
 {
 	fout << "It is Object-oriented programming language: Inheritance is ";
-	switch (obj->number)
+	switch (obj.number)
 	{
 	case Object_oriented::inheritance::SINGLE:
 		fout << "single, ";

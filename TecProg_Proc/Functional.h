@@ -25,8 +25,8 @@ namespace Filippov
 		} type;
 	};
 
-	Functional* Functional_Input(Functional &obj, ifstream &fin);
-	void Functional_Output(Functional *obj, ofstream &fout);
+	void Functional_Input(Functional &obj, ifstream &fin);
+	void Functional_Output(Functional &obj, ofstream &fout);
 }
 
 #endif // !FUNCTIONAL_H

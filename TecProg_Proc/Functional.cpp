@@ -1,6 +1,6 @@
 #include "Functional.h"
 
-Filippov::Functional * Filippov::Functional_Input(Functional &obj, ifstream &fin)
+void Filippov::Functional_Input(Functional &obj, ifstream &fin)
 {
 	unsigned short int temp;
 	fin >> obj.lazy_calculations;
@@ -9,19 +9,19 @@ Filippov::Functional * Filippov::Functional_Input(Functional &obj, ifstream &fin
 	{
 	case 1:
 		obj.type = Functional::typification::STRICT;
-		return &obj;
+		break;
 	case 2:
 		obj.type = Functional::typification::DYNAMIC;
-		return &obj;
+		break;
 	default:
-		return NULL;
+		break;
 	}
 }
 
-void Filippov::Functional_Output(Functional *obj, ofstream &fout)
+void Filippov::Functional_Output(Functional &obj, ofstream &fout)
 {
 	fout << "It is Functional programming language: Support \"lazy\" calculations is ";
-	if (obj->lazy_calculations)
+	if (obj.lazy_calculations)
 	{
 		fout << "present, ";
 	}
@@ -30,7 +30,7 @@ void Filippov::Functional_Output(Functional *obj, ofstream &fout)
 		fout << "missing, ";
 	}
 	fout << "Typification is ";
-	switch (obj->type)
+	switch (obj.type)
 	{
 	case Functional::typification::STRICT:
 		fout << "strict, ";
