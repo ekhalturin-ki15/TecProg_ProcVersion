@@ -7,28 +7,28 @@ namespace Filippov
 {
 	struct Node
 	{
-		Language *language;
-		Node *Next;//указатель на следующий элемент в списке
-		Node *Prev;//указатель на предыдущий элемент в списке
+		Language *language;//указатель на объект списка
+		Node *next;//указатель на следующий элемент в списке
+		Node *prev;//указатель на предыдущий элемент в списке
 	};
 
-	struct LinkedList
+	struct Linked_List
 	{
-		Node *First;//указатель на первый элемент в связном списке
-		Node *Last;//указатель на последний элемент в связном списке
-		size_t SizeList;
+		Node *head;//указатель на первый элемент в связном списке
+		Node *tail;//указатель на последний элемент в связном списке
+		size_t size_list;//размер списка
 	};
 
-	void Init(LinkedList &obj);
-	void Clear(LinkedList &obj);
+	void Init(Linked_List &obj);
+	void Clear(Linked_List &obj);
 
-	void LinkedList_Input(LinkedList &obj, ifstream &fin);
-	void LinkedList_Output(LinkedList &obj, ofstream &fout);
+	void Linked_List_Input(Linked_List &obj, ifstream &fin);
+	void Linked_List_Output(Linked_List &obj, ofstream &fout);
 
-	void Sort_List(LinkedList &obj);
-	void Swap(LinkedList &obj, Node *first, Node *second);
+	void Sort_List(Linked_List &obj);
+	void Swap(Linked_List &obj, Node *first, Node *second);
 
-	void Only_Procedural(LinkedList &obj, ofstream &fout);
+	void Only_Procedural(Linked_List &obj, ofstream &fout);
 }
 
 #endif // !LINKEDLIST_H

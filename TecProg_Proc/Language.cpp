@@ -2,11 +2,11 @@
 #include "Language.h"
 #include <ctime>
 
-Filippov::Language* Filippov::Language_Input(ifstream &fin)
+Filippov::Language *Filippov::Language_Input(ifstream &fin)
 {
 	Language *language = new Language;
 	Procedural *proc;
-	Object_oriented *oop;
+	Object_Oriented *oop;
 	Functional *func;
 	unsigned short int temp;
 	fin >> temp;
@@ -21,10 +21,10 @@ Filippov::Language* Filippov::Language_Input(ifstream &fin)
 		Procedural_Input(*proc, fin);
 		return language;
 	case 2:
-		oop = new Object_oriented;
+		oop = new Object_Oriented;
 		language->key = Language::lang::OOP;
-		oop = (Object_oriented *)language;
-		Object_oriented_Input(*oop, fin);
+		oop = (Object_Oriented *)language;
+		Object_Oriented_Input(*oop, fin);
 		return language;
 	case 3:
 		func = new Functional;
@@ -45,7 +45,7 @@ void Filippov::Language_Output(Language &obj, ofstream &fout)
 		Procedural_Output((Procedural&)obj, fout);
 		break;
 	case Language::lang::OOP:
-		Object_oriented_Output((Object_oriented&)obj, fout);
+		Object_Oriented_Output((Object_Oriented&)obj, fout);
 		break;
 	case Language::lang::FUNCTIONAL:
 		Functional_Output((Functional&)obj, fout);
@@ -66,6 +66,6 @@ bool Filippov::Compare(Language *first, Language *second)
 int Filippov::Past_Years(Language &obj)
 {
 	time_t now = time(NULL);
-	tm* localtm = localtime(&now);
+	tm *localtm = localtime(&now);
 	return 1900 + localtm->tm_year - obj.year_of_development;
 }

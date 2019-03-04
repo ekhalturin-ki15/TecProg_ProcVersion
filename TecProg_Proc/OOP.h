@@ -7,7 +7,7 @@ using namespace std;
 
 namespace Filippov
 {
-	struct Object_oriented
+	struct Object_Oriented
 	{
 		enum lang
 		{
@@ -25,8 +25,8 @@ namespace Filippov
 		} number;
 	};
 
-	void Object_oriented_Input(Object_oriented &obj, ifstream &fin);
-	void Object_oriented_Output(Object_oriented &obj, ofstream &fout);
+	void Object_Oriented_Input(Object_Oriented &obj, ifstream &fin);
+	void Object_Oriented_Output(Object_Oriented &obj, ofstream &fout);
 }
 
 #endif // !OOP_H

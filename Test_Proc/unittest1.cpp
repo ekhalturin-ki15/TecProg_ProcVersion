@@ -1,6 +1,5 @@
 #include "stdafx.h"
 #include "CppUnitTest.h"
-#include "../TecProg_Proc/Procedural.h"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 /*
@@ -32,14 +31,12 @@ namespace Test_Proc
 		*/
 		TEST_METHOD(TestMethod1)
 		{
-			//ifstream fin("input.txt");
-			//Procedural actual;
-			//Procedural* t1= Procedural_Input(actual, fin);
-			//Procedural actual;
-			//Procedural actual = *Procedural_Input(actual, fin);
-			//Procedural expected;
-			//expected.abstract_type = true;
-			//Assert::AreEqual(expected.abstract_type, actual.abstract_type);
+			//ifstream fin("in.txt");
+			//Filippov::Object_oriented actual;
+			//Filippov::Object_oriented_Input(actual, fin);
+			//Filippov::Object_oriented expected;
+			//expected.number = Filippov::Object_oriented::inheritance::SINGLE;
+			//Assert::AreEqual(expected.number, actual.number);
 		}
 
 	};
