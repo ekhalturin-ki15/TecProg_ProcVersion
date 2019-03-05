@@ -28,10 +28,13 @@ void Filippov::Linked_List_Input(Linked_List &obj, ifstream &fin)
 	{
 		temp = new Node;
 
-		temp->next = NULL;
-
 		temp->language = Language_Input(fin);
+		if (temp->language == NULL)
+		{
+			continue;
+		}
 
+		temp->next = NULL;
 		++obj.size_list;
 
 		if (obj.head == NULL)

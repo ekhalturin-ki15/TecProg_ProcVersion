@@ -15,6 +15,12 @@ int main(int argc, char* argv[])
 	}
 
 	ifstream fin(argv[1]);
+	if (!fin.is_open())
+	{
+		cout << "No input file found or could not open!" << endl;
+		system("pause");
+		return 1;
+	}
 	ofstream fout(argv[2]);
 
 	cout << "Start" << endl;

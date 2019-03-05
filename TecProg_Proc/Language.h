@@ -15,8 +15,8 @@ namespace Filippov
 			OOP,
 			FUNCTIONAL
 		} key;
-		unsigned short int year_of_development;
-		int reference;
+		unsigned int year_of_development;
+		unsigned long long int reference;
 	};
 
 	Language *Language_Input(ifstream &fin);

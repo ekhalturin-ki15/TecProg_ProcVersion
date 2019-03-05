@@ -1,22 +1,33 @@
 #include "OOP.h"
+#include <string>
 
-void Filippov::Object_Oriented_Input(Object_Oriented &obj, ifstream &fin)
+bool Filippov::Object_Oriented_Input(Object_Oriented &obj, ifstream &fin)
 {
-	unsigned short int temp;
+	string temp;
 	fin >> temp;
-	switch (temp)
+	if (temp.length() > 1)
+	{
+		return false;
+	}
+	if (!isdigit(int(unsigned char(temp.front()))))
+	{
+		return false;
+	}
+
+	int state = stoi(temp);
+	switch (state)
 	{
 	case 1:
 		obj.number = Object_Oriented::inheritance::SINGLE;
-		break;
+		return true;
 	case 2:
 		obj.number = Object_Oriented::inheritance::MULTIPLE;
-		break;
+		return true;
 	case 3:
 		obj.number = Object_Oriented::inheritance::INTERFACE;
-		break;
+		return true;
 	default:
-		break;
+		return false;
 	}
 }
 

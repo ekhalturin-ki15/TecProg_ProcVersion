@@ -15,12 +15,12 @@ namespace Filippov
 			OOP,
 			FUNCTIONAL
 		} key;
-		unsigned short int year_of_development;
-		int reference;
+		unsigned int year_of_development;
+		unsigned long long int reference;
 		bool abstract_type;
 	};
 
-	void Procedural_Input(Procedural &obj, ifstream &fin);
+	bool Procedural_Input(Procedural &obj, ifstream &fin);
 	void Procedural_Output(Procedural &obj, ofstream &fout);
 }
 
