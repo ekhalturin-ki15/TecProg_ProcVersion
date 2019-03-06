@@ -37,12 +37,12 @@ void Filippov::Linked_List_Input(Linked_List &obj, ifstream &fin)
 		temp->next = NULL;
 		++obj.size_list;
 
-		if (obj.head == NULL)
+		if (obj.head == NULL)//если список пустой
 		{
 			temp->prev = NULL;
 			obj.head = obj.tail = temp;
 		}
-		else
+		else//если в списке есть хотя бы 1 элемент
 		{
 			temp->prev = obj.tail;
 			obj.tail->next = temp;
