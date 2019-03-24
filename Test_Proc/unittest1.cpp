@@ -167,13 +167,6 @@ namespace Test_Proc
 			bool expected = true;
 			Assert::AreEqual(expected, actual);
 		}
-		TEST_METHOD(ListInput)
-		{
-			//ifstream fin("C:\\Users\\Александр\\Documents\\Мои документы\\Visual Studio 2015\\Projects\\TecProg_Proc\\Test_Proc\\inlist1.txt");
-			//Linked_List list;
-			//Init(list);
-			//Linked_List_Input(list, fin);
-		}
 		TEST_METHOD(ListOutput)
 		{
 			ifstream fin("C:\\Users\\Александр\\Documents\\Мои документы\\Visual Studio 2015\\Projects\\TecProg_Proc\\Test_Proc\\inlist1.txt");
