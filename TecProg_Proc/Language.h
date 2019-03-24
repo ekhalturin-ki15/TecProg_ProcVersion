@@ -25,4 +25,4 @@ namespace Filippov
 	bool Compare(Language *first, Language *second);
 }
 
-#endif // !LANGUAGE_H
+#endif

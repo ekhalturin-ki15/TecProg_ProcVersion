@@ -29,4 +29,4 @@ namespace Filippov
 	void Object_Oriented_Output(Object_Oriented &obj, ofstream &fout);
 }
 
-#endif // !OOP_H
+#endif

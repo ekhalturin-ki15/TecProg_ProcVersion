@@ -29,4 +29,4 @@ namespace Filippov
 	void Functional_Output(Functional &obj, ofstream &fout);
 }
 
-#endif // !FUNCTIONAL_H
+#endif

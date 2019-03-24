@@ -20,7 +20,6 @@ void Filippov::Clear(Linked_List &obj)
 	obj.head = temp;
 }
 
-
 void Filippov::Linked_List_Input(Linked_List &obj, ifstream &fin)
 {
 	Node *temp;
@@ -68,7 +67,6 @@ void Filippov::Linked_List_Output(Linked_List &obj, ofstream &fout)
 	}
 }
 
-
 void Filippov::Sort_List(Linked_List &obj)
 {
 	if (obj.size_list < 2)
@@ -110,7 +108,8 @@ void Filippov::Swap(Linked_List &obj, Node *first, Node *second)
 		second->prev = NULL;
 		return;
 	}
-	if ((first->prev == NULL) && (second->next != NULL))//если мы меняем местами первый и второй элемент списка, в котором 3 и более элементов !(first->Prev)
+	//если мы меняем местами первый и второй элемент списка, в котором 3 и более элементов !(first->prev)
+	if ((first->prev == NULL) && (second->next != NULL))
 	{
 		first->next = second->next;
 		first->prev = second;
@@ -120,7 +119,8 @@ void Filippov::Swap(Linked_List &obj, Node *first, Node *second)
 		obj.head = second;
 		return;
 	}
-	if ((first->prev != NULL) && (second->next == NULL))//если мы меняем местами предпоследний и последний элемент списка, в котором 3 и более элементов !(second->Next)
+	//если мы меняем местами предпоследний и последний элемент списка, в котором 3 и более элементов !(second->next)
+	if ((first->prev != NULL) && (second->next == NULL))
 	{
 		second->prev = first->prev;
 		first->prev = second;
@@ -130,7 +130,11 @@ void Filippov::Swap(Linked_List &obj, Node *first, Node *second)
 		obj.tail = first;
 		return;
 	}
-	if ((first->prev != NULL) && (second->next != NULL))//если мы меняем каких-то два элемента, находящихся в середине списка, в котором 4 и более элемента(например второй и третий, если в списке 4 элемента)
+	/*
+	если мы меняем каких-то два элемента, находящихся в середине списка, в котором 4 и более элемента
+	(например второй и третий, если в списке 4 элемента)
+	*/
+	if ((first->prev != NULL) && (second->next != NULL))
 	{
 		first->next = second->next;
 		second->prev = first->prev;
@@ -141,7 +145,6 @@ void Filippov::Swap(Linked_List &obj, Node *first, Node *second)
 		return;
 	}
 }
-
 
 void Filippov::Only_Procedural(Linked_List &obj, ofstream &fout)
 {

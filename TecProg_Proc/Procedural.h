@@ -24,4 +24,4 @@ namespace Filippov
 	void Procedural_Output(Procedural &obj, ofstream &fout);
 }
 
-#endif // !PROCEDURAL_H
+#endif

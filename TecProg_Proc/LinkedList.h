@@ -21,14 +21,11 @@ namespace Filippov
 
 	void Init(Linked_List &obj);
 	void Clear(Linked_List &obj);
-
 	void Linked_List_Input(Linked_List &obj, ifstream &fin);
 	void Linked_List_Output(Linked_List &obj, ofstream &fout);
-
 	void Sort_List(Linked_List &obj);
 	void Swap(Linked_List &obj, Node *first, Node *second);
-
 	void Only_Procedural(Linked_List &obj, ofstream &fout);
 }
 
-#endif // !LINKEDLIST_H
+#endif
