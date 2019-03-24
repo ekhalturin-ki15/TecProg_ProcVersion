@@ -154,10 +154,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Functional.h" />
+    <ClInclude Include="Language.h" />
+    <ClInclude Include="LinkedList.h" />
+    <ClInclude Include="OOP.h" />
+    <ClInclude Include="Procedural.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Functional.cpp" />
+    <ClCompile Include="Language.cpp" />
+    <ClCompile Include="LinkedList.cpp" />
+    <ClCompile Include="OOP.cpp" />
+    <ClCompile Include="Procedural.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -172,7 +182,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="in.txt" />
+    <Text Include="inf1.txt" />
+    <Text Include="inl1.txt" />
+    <Text Include="ino1.txt" />
+    <Text Include="inp1.txt" />
+    <Text Include="inp2.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

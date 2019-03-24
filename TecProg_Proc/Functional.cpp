@@ -5,6 +5,10 @@ bool Filippov::Functional_Input(Functional &obj, ifstream &fin)
 {
 	string temp;
 	fin >> temp;
+	if (temp == "\0")
+	{
+		return false;
+	}
 	if (temp.length() > 1)
 	{
 		getline(fin, temp, '\n');
@@ -27,6 +31,10 @@ bool Filippov::Functional_Input(Functional &obj, ifstream &fin)
 	}
 
 	fin >> temp;
+	if (temp == "\0")
+	{
+		return false;
+	}
 	if (temp.length() > 1)
 	{
 		return false;

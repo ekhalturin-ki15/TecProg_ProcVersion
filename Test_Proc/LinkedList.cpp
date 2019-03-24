@@ -1,3 +1,4 @@
+#include "stdafx.h"
 #include "LinkedList.h"
 
 void Filippov::Init(Linked_List &obj)
@@ -28,16 +29,18 @@ void Filippov::Linked_List_Input(Linked_List &obj, ifstream &fin)
 	{
 		temp = new Node;
 
-		temp->language = Language_Input(fin);
 		temp->next = NULL;
+
+		temp->language = Language_Input(fin);
+
 		++obj.size_list;
 
-		if (obj.head == NULL)//если список пустой
+		if (obj.head == NULL)
 		{
 			temp->prev = NULL;
 			obj.head = obj.tail = temp;
 		}
-		else//если в списке есть хотя бы 1 элемент
+		else
 		{
 			temp->prev = obj.tail;
 			obj.tail->next = temp;
@@ -54,16 +57,9 @@ void Filippov::Linked_List_Output(Linked_List &obj, ofstream &fout)
 	for (size_t i = 0; i < obj.size_list; i++)
 	{
 		fout << i + 1 << ": ";
-		if (current->language == NULL)
-		{
-			fout << "Error reading data! Expected other values in the string." << endl;
-		}
-		else
-		{
-			Language_Output(*current->language, fout);
-			fout << "The number of years that have passed since the year the language was created = "
-				<< Past_Years(*current->language) << endl;
-		}
+		Language_Output(*current->language, fout);
+		fout << "The number of years that have passed since the year the language was created = "
+			<< Past_Years(*current->language) << endl;
 		current = current->next;
 	}
 }
@@ -151,11 +147,6 @@ void Filippov::Only_Procedural(Linked_List &obj, ofstream &fout)
 	for (size_t i = 0; i < obj.size_list; i++)
 	{
 		fout << i + 1 << ": ";
-		if (current->language == NULL)
-		{
-			fout << endl;
-			continue;
-		}
 		if (current->language->key == Language::lang::PROCEDURAL)
 		{
 			Language_Output(*current->language, fout);

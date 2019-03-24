@@ -21,6 +21,21 @@
     <ClInclude Include="targetver.h">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
+    <ClInclude Include="Functional.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="Language.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="LinkedList.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="OOP.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="Procedural.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -29,9 +44,36 @@
     <ClCompile Include="unittest1.cpp">
       <Filter>Файлы исходного кода</Filter>
     </ClCompile>
+    <ClCompile Include="Functional.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="Language.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="LinkedList.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="OOP.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="Procedural.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="in.txt">
+    <Text Include="inp2.txt">
+      <Filter>Файлы ресурсов</Filter>
+    </Text>
+    <Text Include="inp1.txt">
+      <Filter>Файлы ресурсов</Filter>
+    </Text>
+    <Text Include="inf1.txt">
+      <Filter>Файлы ресурсов</Filter>
+    </Text>
+    <Text Include="ino1.txt">
+      <Filter>Файлы ресурсов</Filter>
+    </Text>
+    <Text Include="inl1.txt">
       <Filter>Файлы ресурсов</Filter>
     </Text>
   </ItemGroup>

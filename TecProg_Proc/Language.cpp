@@ -12,6 +12,10 @@ Filippov::Language *Filippov::Language_Input(ifstream &fin)
 
 	string temp;
 	fin >> temp;
+	if (temp == "\0")
+	{
+		return false;
+	}
 	if (temp.length()  > 1)
 	{
 		fin.get();
@@ -27,6 +31,10 @@ Filippov::Language *Filippov::Language_Input(ifstream &fin)
 	int state = stoi(temp);
 
 	fin >> temp;
+	if (temp == "\0")
+	{
+		return false;
+	}
 	if (temp.length() != 4)
 	{
 		getline(fin, temp, '\n');
@@ -43,6 +51,10 @@ Filippov::Language *Filippov::Language_Input(ifstream &fin)
 	language->year_of_development = stoul(temp);
 
 	fin >> temp;
+	if (temp == "\0")
+	{
+		return false;
+	}
 	for (auto iter = temp.begin(); iter != temp.end(); ++iter)
 	{
 		if (!isdigit(int(unsigned char(*iter))))
@@ -127,5 +139,20 @@ int Filippov::Past_Years(Language &obj)
 
 bool Filippov::Compare(Language *first, Language *second)
 {
-	return Past_Years(*first) < Past_Years(*second);
+	if (first == NULL && second != NULL)
+	{
+		return true;
+	}
+	if (first != NULL && second == NULL)
+	{
+		return false;
+	}
+	if (first == NULL && second == NULL)
+	{
+		return false;
+	}
+	if (first != NULL && second != NULL)
+	{
+		return Past_Years(*first) < Past_Years(*second);
+	}
 }
