@@ -53,7 +53,7 @@ void Filippov::Language_Output(Language &obj, ofstream &fout)
 		break;
 	default:
 		fout << "Incorrect programming language" << endl;
-		return;
+		//return;
 	}
 	fout << "Year of development = " << obj.year_of_development
 		<< ", The number of references of this language on the Internet = " << obj.reference << endl;

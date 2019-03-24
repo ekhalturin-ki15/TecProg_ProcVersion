@@ -182,8 +182,16 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Text Include="inexf.txt" />
+    <Text Include="inexl.txt" />
+    <Text Include="inexlist1.txt" />
+    <Text Include="inexlist2.txt" />
+    <Text Include="inexlist3.txt" />
+    <Text Include="inexo.txt" />
+    <Text Include="inexp.txt" />
     <Text Include="inf1.txt" />
     <Text Include="inl1.txt" />
+    <Text Include="inlist1.txt" />
     <Text Include="ino1.txt" />
     <Text Include="inp1.txt" />
     <Text Include="inp2.txt" />

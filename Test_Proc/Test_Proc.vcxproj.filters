@@ -76,5 +76,29 @@
     <Text Include="inl1.txt">
       <Filter>Файлы ресурсов</Filter>
     </Text>
+    <Text Include="inexp.txt">
+      <Filter>Файлы ресурсов</Filter>
+    </Text>
+    <Text Include="inexo.txt">
+      <Filter>Файлы ресурсов</Filter>
+    </Text>
+    <Text Include="inexf.txt">
+      <Filter>Файлы ресурсов</Filter>
+    </Text>
+    <Text Include="inexl.txt">
+      <Filter>Файлы ресурсов</Filter>
+    </Text>
+    <Text Include="inlist1.txt">
+      <Filter>Файлы ресурсов</Filter>
+    </Text>
+    <Text Include="inexlist1.txt">
+      <Filter>Файлы ресурсов</Filter>
+    </Text>
+    <Text Include="inexlist2.txt">
+      <Filter>Файлы ресурсов</Filter>
+    </Text>
+    <Text Include="inexlist3.txt">
+      <Filter>Файлы ресурсов</Filter>
+    </Text>
   </ItemGroup>
 </Project>
