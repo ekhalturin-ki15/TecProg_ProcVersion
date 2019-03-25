@@ -14,11 +14,10 @@ namespace Filippov
 			OOP
 		} key;
 		unsigned short int year_of_development;
-		int reference;
 	};
 
-	Language* Language_Input(ifstream &fin);
+	Language *Language_Input(ifstream &fin);
 	void Language_Output(Language *obj, ofstream &fout);
 }
 
-#endif // !LANGUAGE_H
+#endif

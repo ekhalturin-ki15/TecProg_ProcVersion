@@ -5,7 +5,7 @@
 using namespace std;
 using namespace Filippov;
 
-int main(int argc, char* argv[])//int argc, char* argv[]
+int main(int argc, char* argv[])
 {
 	if (argc != 3)
 	{
@@ -17,17 +17,21 @@ int main(int argc, char* argv[])//int argc, char* argv[]
 	ofstream fout(argv[2]);
 
 	cout << "Start" << endl;
+
 	LinkedList list;
 	Init(list);
 	LinkedList_Input(list, fin);
 	fout << "Filled container." << endl;
 	LinkedList_Output(list, fout);
 
-
+	fout << endl;
+	Multi_Method(list, fout);
+	fout << endl;
 
 	Clear(list);
 	fout << "Empty container." << endl;
 	LinkedList_Output(list, fout);
+
 	cout << "Stop" << endl;
 	return 0;
 }

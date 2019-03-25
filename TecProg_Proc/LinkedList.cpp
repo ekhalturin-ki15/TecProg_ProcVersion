@@ -2,22 +2,22 @@
 
 void Filippov::Init(LinkedList &obj)
 {
-	obj.First = NULL;
-	obj.Last = NULL;
-	obj.SizeList = 0;
+	obj.first = NULL;
+	obj.last = NULL;
+	obj.size_list = 0;
 }
 
 void Filippov::Clear(LinkedList &obj)
 {
 	Node *Temp = NULL;
-	while (obj.Last != NULL)
+	while (obj.last != NULL)
 	{
-		Temp = obj.Last->Prev;
-		delete obj.Last;
-		obj.Last = Temp;
-		--obj.SizeList;
+		Temp = obj.last->prev;
+		delete obj.last;
+		obj.last = Temp;
+		--obj.size_list;
 	}
-	obj.First = Temp;
+	obj.first = Temp;
 }
 
 void Filippov::LinkedList_Input(LinkedList &obj, ifstream &fin)
@@ -27,36 +27,89 @@ void Filippov::LinkedList_Input(LinkedList &obj, ifstream &fin)
 	{
 		Temp = new Node;
 
-		Temp->Next = NULL;
+		Temp->next = NULL;
 
 		Temp->language = Language_Input(fin);
 
-		++obj.SizeList;
+		++obj.size_list;
 
-		if (obj.First == NULL)
+		if (obj.first == NULL)
 		{
-			Temp->Prev = NULL;
-			obj.First = obj.Last = Temp;
+			Temp->prev = NULL;
+			obj.first = obj.last = Temp;
 		}
 		else
 		{
-			Temp->Prev = obj.Last;
-			obj.Last->Next = Temp;
-			obj.Last = Temp;
+			Temp->prev = obj.last;
+			obj.last->next = Temp;
+			obj.last = Temp;
 		}
 	}
 }
 
 void Filippov::LinkedList_Output(LinkedList &obj, ofstream &fout)
 {
-	Node *current = obj.First;
-	fout << "Container contains " << obj.SizeList << " elements." << endl;
+	Node *current = obj.first;
+	fout << "Container contains " << obj.size_list << " elements." << endl;
 
-	for (size_t i = 0; i < obj.SizeList; i++)
+	for (size_t i = 0; i < obj.size_list; i++)
 	{
 		fout << i + 1 << ": ";
 		Language_Output(current->language, fout);
-		current = current->Next;
+		current = current->next;
 	}
 	fout << endl;
+}
+
+void Filippov::Multi_Method(LinkedList &obj, ofstream &fout)
+{
+	Node *current_first = obj.first;
+	Node *current_second = current_first->next;
+
+	fout << "Multimethod." << endl;
+	for (size_t i = 0; i < obj.size_list - 1; i++)
+	{
+		for (size_t j = i + 1; j < obj.size_list; j++)
+		{
+			switch (current_first->language->key)
+			{
+			case Language::lang::PROCEDURAL:
+				switch (current_second->language->key)
+				{
+				case Language::lang::PROCEDURAL:
+					fout << "Procedural and Procedural." << endl;
+					break;
+				case Language::lang::OOP:
+					fout << "Procedural and OOP." << endl;
+					break;
+				default:
+					fout << "Unknown type." << endl;
+					break;
+				}
+				break;
+			case Language::lang::OOP:
+				switch (current_second->language->key)
+				{
+				case Language::lang::PROCEDURAL:
+					fout << "OOP and Procedural." << endl;
+					break;
+				case Language::lang::OOP:
+					fout << "OOP and OOP." << endl;
+					break;
+				default:
+					fout << "Unknown type." << endl;
+					break;
+				}
+				break;
+			default:
+				fout << "Unknown type." << endl;
+				break;
+			}
+			Language_Output(current_first->language, fout);
+			Language_Output(current_second->language, fout);
+			current_second = current_second->next;
+		}
+		current_first = current_first->next;
+		current_second = current_first->next;
+	}
 }

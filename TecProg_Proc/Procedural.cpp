@@ -1,6 +1,6 @@
 #include "Procedural.h"
 
-Filippov::Procedural * Filippov::Procedural_Input(Procedural &obj, ifstream &fin)
+Filippov::Procedural *Filippov::Procedural_Input(Procedural &obj, ifstream &fin)
 {
 	fin >> obj.abstract_type;
 	return &obj;

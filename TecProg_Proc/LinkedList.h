@@ -8,22 +8,23 @@ namespace Filippov
 	struct Node
 	{
 		Language *language;
-		Node *Next;//указатель на следующий элемент в списке
-		Node *Prev;//указатель на предыдущий элемент в списке
+		Node *next;//указатель на следующий элемент в списке
+		Node *prev;//указатель на предыдущий элемент в списке
 	};
 
 	struct LinkedList
 	{
-		Node *First;//указатель на первый элемент в связном списке
-		Node *Last;//указатель на последний элемент в связном списке
-		size_t SizeList;
+		Node *first;//указатель на первый элемент в связном списке
+		Node *last;//указатель на последний элемент в связном списке
+		size_t size_list;
 	};
 
 	void Init(LinkedList &obj);
 	void Clear(LinkedList &obj);
-
 	void LinkedList_Input(LinkedList &obj, ifstream &fin);
 	void LinkedList_Output(LinkedList &obj, ofstream &fout);
+
+	void Multi_Method(LinkedList &obj, ofstream &fout);
 }
 
-#endif // !LINKEDLIST_H
+#endif

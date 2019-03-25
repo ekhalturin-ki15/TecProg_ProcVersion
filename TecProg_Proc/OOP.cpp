@@ -1,6 +1,6 @@
 #include "OOP.h"
 
-Filippov::Object_oriented * Filippov::Object_oriented_Input(Object_oriented &obj, ifstream &fin)
+Filippov::Object_oriented *Filippov::Object_oriented_Input(Object_oriented &obj, ifstream &fin)
 {
 	unsigned short int temp;
 	fin >> temp;

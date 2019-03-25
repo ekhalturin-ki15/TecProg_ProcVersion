@@ -15,7 +15,6 @@ namespace Filippov
 			OOP
 		} key;
 		unsigned short int year_of_development;
-		int reference;
 		enum inheritance
 		{
 			SINGLE,
@@ -24,8 +23,8 @@ namespace Filippov
 		} number;
 	};
 
-	Object_oriented* Object_oriented_Input(Object_oriented &obj, ifstream &fin);
+	Object_oriented *Object_oriented_Input(Object_oriented &obj, ifstream &fin);
 	void Object_oriented_Output(Object_oriented *obj, ofstream &fout);
 }
 
-#endif // !OOP_H
+#endif

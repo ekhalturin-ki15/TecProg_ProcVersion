@@ -8,7 +8,6 @@ Filippov::Language* Filippov::Language_Input(ifstream &fin)
 	unsigned short int temp;
 	fin >> temp;
 	fin >> language->year_of_development;
-	fin >> language->reference;
 	switch (temp)
 	{
 	case 1:
@@ -42,6 +41,5 @@ void Filippov::Language_Output(Language *obj, ofstream &fout)
 		fout << "Incorrect programming language" << endl;
 		return;
 	}
-	fout << "Year of development = " << obj->year_of_development
-		<< ", The number of references of this language on the Internet = " << obj->reference << endl;
+	fout << "Year of development = " << obj->year_of_development << endl;
 }

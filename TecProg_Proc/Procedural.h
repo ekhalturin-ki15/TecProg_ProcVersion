@@ -15,12 +15,11 @@ namespace Filippov
 			OOP
 		} key;
 		unsigned short int year_of_development;
-		int reference;
 		bool abstract_type;
 	};
 
-	Procedural* Procedural_Input(Procedural &obj, ifstream &fin);
+	Procedural *Procedural_Input(Procedural &obj, ifstream &fin);
 	void Procedural_Output(Procedural *obj, ofstream &fout);
 }
 
-#endif // !PROCEDURAL_H
+#endif
