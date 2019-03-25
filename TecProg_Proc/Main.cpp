@@ -22,6 +22,12 @@ int main(int argc, char* argv[])
 		return 1;
 	}
 	ofstream fout(argv[2]);
+	if (!fin.is_open())
+	{
+		cout << "No output file found or could not open!" << endl;
+		system("pause");
+		return 1;
+	}
 
 	cout << "Start" << endl;
 
