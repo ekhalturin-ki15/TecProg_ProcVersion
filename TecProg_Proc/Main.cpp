@@ -24,7 +24,6 @@ int main(int argc, char* argv[])
 	fout << "Filled container." << endl;
 	LinkedList_Output(list, fout);
 
-	fout << endl;
 	Multi_Method(list, fout);
 	fout << endl;
 
