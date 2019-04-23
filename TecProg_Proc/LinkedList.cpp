@@ -1,7 +1,7 @@
-#include "LinkedList.h"
+п»ї#include "LinkedList.h"
 
 
-//Зачем, есть функция Clear (теперь)
+//Р—Р°С‡РµРј, РµСЃС‚СЊ С„СѓРЅРєС†РёСЏ Clear (С‚РµРїРµСЂСЊ)
 /*
 void Filippov::Init(Linked_List &obj)
 {
@@ -10,7 +10,7 @@ void Filippov::Init(Linked_List &obj)
 	obj.size_list = 0;
 }
 */
-//Удаление объектов больше не нужно, перепишем
+//РЈРґР°Р»РµРЅРёРµ РѕР±СЉРµРєС‚РѕРІ Р±РѕР»СЊС€Рµ РЅРµ РЅСѓР¶РЅРѕ, РїРµСЂРµРїРёС€РµРј
 /*
 void Filippov::Clear(Linked_List &obj)
 {
@@ -26,7 +26,7 @@ void Filippov::Clear(Linked_List &obj)
 }
 */
 
-//Функция упростилась
+//Р¤СѓРЅРєС†РёСЏ СѓРїСЂРѕСЃС‚РёР»Р°СЃСЊ
 void Filippov::Clear(Linked_List& obj)
 {
 	obj.size_list = 0;
@@ -41,19 +41,19 @@ void Filippov::Linked_List_Input(Linked_List &obj, ifstream &fin)
 	while (!fin.eof())
 	{
 		//temp = new Node;
-//Больше не используем new
+//Р‘РѕР»СЊС€Рµ РЅРµ РёСЃРїРѕР»СЊР·СѓРµРј new
 		temp = make_shared<Node>();
 
 		temp->language = Language_Input(fin);
 		temp->next = NULL;
 		++obj.size_list;
 
-		if (obj.head == NULL)//если список пустой
+		if (obj.head == NULL)//РµСЃР»Рё СЃРїРёСЃРѕРє РїСѓСЃС‚РѕР№
 		{
 			temp->prev = NULL;
 			obj.head = obj.tail = temp;
 		}
-		else//если в списке есть хотя бы 1 элемент
+		else//РµСЃР»Рё РІ СЃРїРёСЃРєРµ РµСЃС‚СЊ С…РѕС‚СЏ Р±С‹ 1 СЌР»РµРјРµРЅС‚
 		{
 			temp->prev = obj.tail;
 			obj.tail->next = temp;
@@ -95,7 +95,7 @@ void Filippov::Sort_List(Linked_List &obj)
 	shared_ptr<Node> current = obj.head;
 	bool flag = false;
 
-	//Пузырёк, серьёзно? Ну а почему бы и нет
+	//РџСѓР·С‹СЂС‘Рє, СЃРµСЂСЊС‘Р·РЅРѕ? РќСѓ Р° РїРѕС‡РµРјСѓ Р±С‹ Рё РЅРµС‚
 	do
 	{
 		current = obj.head;
@@ -105,8 +105,8 @@ void Filippov::Sort_List(Linked_List &obj)
 			if (Compare(current->language, current->next->language))
 			{
 				//Swap(obj, current, current->next);
-			//Нам незачем менять местами всю структуру с указателями
-			//Достаточно поменять местами хранимые данные, связи prev и next останутся правильными
+			//РќР°Рј РЅРµР·Р°С‡РµРј РјРµРЅСЏС‚СЊ РјРµСЃС‚Р°РјРё РІСЃСЋ СЃС‚СЂСѓРєС‚СѓСЂСѓ СЃ СѓРєР°Р·Р°С‚РµР»СЏРјРё
+			//Р”РѕСЃС‚Р°С‚РѕС‡РЅРѕ РїРѕРјРµРЅСЏС‚СЊ РјРµСЃС‚Р°РјРё С…СЂР°РЅРёРјС‹Рµ РґР°РЅРЅС‹Рµ, СЃРІСЏР·Рё prev Рё next РѕСЃС‚Р°РЅСѓС‚СЃСЏ РїСЂР°РІРёР»СЊРЅС‹РјРё
 				std::swap(current->language, current->next->language);
 				flag = true;
 			}
@@ -145,11 +145,11 @@ void Filippov::Only_Procedural(Linked_List& obj, ofstream& fout)
 	fout << endl;
 }
 
-//Функция больше не используется
+//Р¤СѓРЅРєС†РёСЏ Р±РѕР»СЊС€Рµ РЅРµ РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ
 /*
 void Filippov::Swap(Linked_List &obj, Node *first, Node *second)
 {
-	if ((first->prev == NULL) && (second->next == NULL))//если в списке всего 2 элемента, но нам приспичило поменять их местами
+	if ((first->prev == NULL) && (second->next == NULL))//РµСЃР»Рё РІ СЃРїРёСЃРєРµ РІСЃРµРіРѕ 2 СЌР»РµРјРµРЅС‚Р°, РЅРѕ РЅР°Рј РїСЂРёСЃРїРёС‡РёР»Рѕ РїРѕРјРµРЅСЏС‚СЊ РёС… РјРµСЃС‚Р°РјРё
 	{
 		obj.head = second;
 		obj.tail = first;
@@ -159,7 +159,7 @@ void Filippov::Swap(Linked_List &obj, Node *first, Node *second)
 		second->prev = NULL;
 		return;
 	}
-	//если мы меняем местами первый и второй элемент списка, в котором 3 и более элементов !(first->prev)
+	//РµСЃР»Рё РјС‹ РјРµРЅСЏРµРј РјРµСЃС‚Р°РјРё РїРµСЂРІС‹Р№ Рё РІС‚РѕСЂРѕР№ СЌР»РµРјРµРЅС‚ СЃРїРёСЃРєР°, РІ РєРѕС‚РѕСЂРѕРј 3 Рё Р±РѕР»РµРµ СЌР»РµРјРµРЅС‚РѕРІ !(first->prev)
 	if ((first->prev == NULL) && (second->next != NULL))
 	{
 		first->next = second->next;
@@ -170,7 +170,7 @@ void Filippov::Swap(Linked_List &obj, Node *first, Node *second)
 		obj.head = second;
 		return;
 	}
-	//если мы меняем местами предпоследний и последний элемент списка, в котором 3 и более элементов !(second->next)
+	//РµСЃР»Рё РјС‹ РјРµРЅСЏРµРј РјРµСЃС‚Р°РјРё РїСЂРµРґРїРѕСЃР»РµРґРЅРёР№ Рё РїРѕСЃР»РµРґРЅРёР№ СЌР»РµРјРµРЅС‚ СЃРїРёСЃРєР°, РІ РєРѕС‚РѕСЂРѕРј 3 Рё Р±РѕР»РµРµ СЌР»РµРјРµРЅС‚РѕРІ !(second->next)
 	if ((first->prev != NULL) && (second->next == NULL))
 	{
 		second->prev = first->prev;
@@ -182,8 +182,8 @@ void Filippov::Swap(Linked_List &obj, Node *first, Node *second)
 		return;
 	}
 	
-	если мы меняем каких-то два элемента, находящихся в середине списка, в котором 4 и более элемента
-	(например второй и третий, если в списке 4 элемента)
+	РµСЃР»Рё РјС‹ РјРµРЅСЏРµРј РєР°РєРёС…-С‚Рѕ РґРІР° СЌР»РµРјРµРЅС‚Р°, РЅР°С…РѕРґСЏС‰РёС…СЃСЏ РІ СЃРµСЂРµРґРёРЅРµ СЃРїРёСЃРєР°, РІ РєРѕС‚РѕСЂРѕРј 4 Рё Р±РѕР»РµРµ СЌР»РµРјРµРЅС‚Р°
+	(РЅР°РїСЂРёРјРµСЂ РІС‚РѕСЂРѕР№ Рё С‚СЂРµС‚РёР№, РµСЃР»Рё РІ СЃРїРёСЃРєРµ 4 СЌР»РµРјРµРЅС‚Р°)
 	
 	if ((first->prev != NULL) && (second->next != NULL))
 	{

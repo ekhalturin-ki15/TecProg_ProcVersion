@@ -1,4 +1,4 @@
-#ifndef FUNCTIONAL_H
+﻿#ifndef FUNCTIONAL_H
 #define FUNCTIONAL_H
 
 #include <fstream>

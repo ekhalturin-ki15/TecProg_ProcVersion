@@ -1,4 +1,4 @@
-#include "Functional.h"
+﻿#include "Functional.h"
 #include <string>
 #include <sstream>
 

@@ -1,4 +1,4 @@
-#ifndef LANGUAGE_H
+п»ї#ifndef LANGUAGE_H
 #define LANGUAGE_H
 
 #include "Procedural.h"
@@ -6,8 +6,8 @@
 #include "Functional.h"
 
 
-//Хорошая идея, выделить отдельные namespace
-//Cловно static class
+//РҐРѕСЂРѕС€Р°СЏ РёРґРµСЏ, РІС‹РґРµР»РёС‚СЊ РѕС‚РґРµР»СЊРЅС‹Рµ namespace
+//CР»РѕРІРЅРѕ static class
 namespace Filippov
 {
 	struct Language

@@ -1,4 +1,4 @@
-#include "LinkedList.h"
+ï»¿#include "LinkedList.h"
 #include <iostream>
 #include <fstream>
 
@@ -15,7 +15,7 @@ int main(int argc, char* argv[])
 		//cout << "incorrect command line! "
 		//	"Waited: command infile outfile" << endl;
 
-// Äëÿ óäîáñòâà, âìåñòî îøèáêè, ââåä¸ì ñòàíäàðíòíûå ôàéëû
+// Ð”Ð»Ñ ÑƒÐ´Ð¾Ð±ÑÑ‚Ð²Ð°, Ð²Ð¼ÐµÑÑ‚Ð¾ Ð¾ÑˆÐ¸Ð±ÐºÐ¸, Ð²Ð²ÐµÐ´Ñ‘Ð¼ ÑÑ‚Ð°Ð½Ð´Ð°Ñ€Ð½Ñ‚Ð½Ñ‹Ðµ Ñ„Ð°Ð¹Ð»Ñ‹
 		fin.open("input.txt");
 		fout.open("output.txt");
 
@@ -34,7 +34,7 @@ int main(int argc, char* argv[])
 	}
 	
 
-	if (!fout.is_open()) // èñïðàâëåíî íà fout.is_open
+	if (!fout.is_open()) // Ð¸ÑÐ¿Ñ€Ð°Ð²Ð»ÐµÐ½Ð¾ Ð½Ð° fout.is_open
 	{
 		cout << "No output file found or could not open!" << endl;
 		system("pause");

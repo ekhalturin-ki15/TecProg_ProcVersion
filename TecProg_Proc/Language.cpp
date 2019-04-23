@@ -1,11 +1,11 @@
-#define _CRT_SECURE_NO_WARNINGS
+п»ї#define _CRT_SECURE_NO_WARNINGS
 #include "Language.h"
 #include <ctime>
 #include <string>
 #include <sstream>
 
 //Filippov::Language *Filippov::Language_Input(ifstream &fin)
-//Придётся сделать void*, иначе, размеры не состыкуются
+//РџСЂРёРґС‘С‚СЃСЏ СЃРґРµР»Р°С‚СЊ void*, РёРЅР°С‡Рµ, СЂР°Р·РјРµСЂС‹ РЅРµ СЃРѕСЃС‚С‹РєСѓСЋС‚СЃСЏ
 shared_ptr<void> Filippov::Language_Input(ifstream& fin)
 {
 	/*
@@ -22,12 +22,12 @@ shared_ptr<void> Filippov::Language_Input(ifstream& fin)
 	unique_ptr<Functional> func;
 	string temp;
 
-//Самому парсить строку и делать проверки неудобно
-//Воспользуемся с++ streamstring
+//РЎР°РјРѕРјСѓ РїР°СЂСЃРёС‚СЊ СЃС‚СЂРѕРєСѓ Рё РґРµР»Р°С‚СЊ РїСЂРѕРІРµСЂРєРё РЅРµСѓРґРѕР±РЅРѕ
+//Р’РѕСЃРїРѕР»СЊР·СѓРµРјСЃСЏ СЃ++ streamstring
 	stringstream line;
 	getline(fin, temp, '\n');
 	line.str(temp);
-//Всё, у нас есть буффер для считывания, и за его пределы мы не выйдём
+//Р’СЃС‘, Сѓ РЅР°СЃ РµСЃС‚СЊ Р±СѓС„С„РµСЂ РґР»СЏ СЃС‡РёС‚С‹РІР°РЅРёСЏ, Рё Р·Р° РµРіРѕ РїСЂРµРґРµР»С‹ РјС‹ РЅРµ РІС‹Р№РґС‘Рј
 
 	//fin >> temp;
 	line >> temp;
@@ -59,7 +59,7 @@ shared_ptr<void> Filippov::Language_Input(ifstream& fin)
 	//fin >> temp;
 	line >> temp;
 
-//Больше этот отдельный случай не требуется
+//Р‘РѕР»СЊС€Рµ СЌС‚РѕС‚ РѕС‚РґРµР»СЊРЅС‹Р№ СЃР»СѓС‡Р°Р№ РЅРµ С‚СЂРµР±СѓРµС‚СЃСЏ
 	/*if (temp == "\0")
 	{
 		return false;
@@ -140,7 +140,7 @@ shared_ptr<void> Filippov::Language_Input(ifstream& fin)
 		//if (!Functional_Input(*func, fin))
 		if (!Functional_Input(*func, line))
 		{
-		//Честно - не знаю, но нужно очистить самому
+		//Р§РµСЃС‚РЅРѕ - РЅРµ Р·РЅР°СЋ, РЅРѕ РЅСѓР¶РЅРѕ РѕС‡РёСЃС‚РёС‚СЊ СЃР°РјРѕРјСѓ
 			func.release();
 			return NULL;
 		}
@@ -199,7 +199,7 @@ bool Filippov::Compare(shared_ptr<void> first, shared_ptr<void> second)
 	{
 		return false;
 	}
-//Лучше сделать так, чтобы был возрат результата в любом случаи
+//Р›СѓС‡С€Рµ СЃРґРµР»Р°С‚СЊ С‚Р°Рє, С‡С‚РѕР±С‹ Р±С‹Р» РІРѕР·СЂР°С‚ СЂРµР·СѓР»СЊС‚Р°С‚Р° РІ Р»СЋР±РѕРј СЃР»СѓС‡Р°Рё
 	/*if (first != NULL && second != NULL)
 	{
 		return Past_Years(*first) < Past_Years(*second);
