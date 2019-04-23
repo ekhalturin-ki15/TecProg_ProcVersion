@@ -1,14 +1,16 @@
 #include "OOP.h"
 #include <string>
+#include <sstream>
 
-bool Filippov::Object_Oriented_Input(Object_Oriented &obj, ifstream &fin)
+//bool Filippov::Object_Oriented_Input(Object_Oriented &obj, ifstream &fin)
+bool Filippov::Object_Oriented_Input(Object_Oriented& obj, stringstream& fin)
 {
 	string temp;
 	fin >> temp;
-	if (temp == "\0")
+	/*if (temp == "\0")
 	{
 		return false;
-	}
+	}*/
 	if (temp.length() > 1)
 	{
 		return false;

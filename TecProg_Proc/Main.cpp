@@ -7,22 +7,34 @@ using namespace Filippov;
 
 int main(int argc, char* argv[])
 {
+	ifstream fin;
+	ofstream fout;
+
 	if (argc != 3)
 	{
-		cout << "incorrect command line! "
-			"Waited: command infile outfile" << endl;
-		exit(1);
-	}
+		//cout << "incorrect command line! "
+		//	"Waited: command infile outfile" << endl;
 
-	ifstream fin(argv[1]);
+// Для удобства, вместо ошибки, введём стандарнтные файлы
+		fin.open("input.txt");
+		fout.open("output.txt");
+
+	}
+	else
+	{
+		fin.open(argv[1]);
+		fout.open(argv[2]);
+	}
+	
 	if (!fin.is_open())
 	{
 		cout << "No input file found or could not open!" << endl;
 		system("pause");
 		return 1;
 	}
-	ofstream fout(argv[2]);
-	if (!fin.is_open())
+	
+
+	if (!fout.is_open()) // исправлено на fout.is_open
 	{
 		cout << "No output file found or could not open!" << endl;
 		system("pause");
@@ -32,7 +44,7 @@ int main(int argc, char* argv[])
 	cout << "Start" << endl;
 
 	Linked_List list;
-	Init(list);
+	Clear(list);
 	Linked_List_Input(list, fin);
 	fout << "Filled container." << endl;
 	Linked_List_Output(list, fout);

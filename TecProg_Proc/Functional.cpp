@@ -1,22 +1,24 @@
 #include "Functional.h"
 #include <string>
+#include <sstream>
 
-bool Filippov::Functional_Input(Functional &obj, ifstream &fin)
+//bool Filippov::Functional_Input(Functional &obj, ifstream &fin)
+bool Filippov::Functional_Input(Functional& obj, stringstream& fin)
 {
 	string temp;
 	fin >> temp;
-	if (temp == "\0")
+	/*if (temp == "\0")
 	{
 		return false;
-	}
+	}*/
 	if (temp.length() > 1)
 	{
-		getline(fin, temp, '\n');
+		//getline(fin, temp, '\n');
 		return false;
 	}
 	if (!isdigit(int(unsigned char(temp.front()))))
 	{
-		getline(fin, temp, '\n');
+		//getline(fin, temp, '\n');
 		return false;
 	}
 
@@ -31,10 +33,10 @@ bool Filippov::Functional_Input(Functional &obj, ifstream &fin)
 	}
 
 	fin >> temp;
-	if (temp == "\0")
+	/*if (temp == "\0")
 	{
 		return false;
-	}
+	}*/
 	if (temp.length() > 1)
 	{
 		return false;

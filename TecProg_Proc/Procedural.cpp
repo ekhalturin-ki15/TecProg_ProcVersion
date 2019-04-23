@@ -1,14 +1,16 @@
 #include "Procedural.h"
 #include <string>
+#include <sstream>
 
-bool Filippov::Procedural_Input(Procedural &obj, ifstream &fin)
+//bool Filippov::Procedural_Input(Procedural &obj, ifstream &fin)
+bool Filippov::Procedural_Input(Procedural& obj, stringstream& fin)
 {
 	string temp;
 	fin >> temp;
-	if (temp == "\0")
+	/*if (temp == "\0")
 	{
 		return false;
-	}
+	}*/
 	if (temp.length() > 1)
 	{
 		return false;

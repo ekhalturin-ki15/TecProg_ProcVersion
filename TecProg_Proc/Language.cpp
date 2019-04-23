@@ -2,26 +2,48 @@
 #include "Language.h"
 #include <ctime>
 #include <string>
+#include <sstream>
 
-Filippov::Language *Filippov::Language_Input(ifstream &fin)
+//Filippov::Language *Filippov::Language_Input(ifstream &fin)
+//Придётся сделать void*, иначе, размеры не состыкуются
+shared_ptr<void> Filippov::Language_Input(ifstream& fin)
 {
+	/*
 	Language *language = new Language;
 	Procedural *proc;
 	Object_Oriented *oop;
 	Functional *func;
+	*/
 
+	unique_ptr<Language> language;
+	language = make_unique<Language>();
+	unique_ptr<Procedural> proc;
+	unique_ptr<Object_Oriented> oop;
+	unique_ptr<Functional> func;
 	string temp;
-	fin >> temp;
-	if (temp == "\0")
+
+//Самому парсить строку и делать проверки неудобно
+//Воспользуемся с++ streamstring
+	stringstream line;
+	getline(fin, temp, '\n');
+	line.str(temp);
+//Всё, у нас есть буффер для считывания, и за его пределы мы не выйдём
+
+	//fin >> temp;
+	line >> temp;
+
+	/*if (temp == "\0")
 	{
 		return false;
-	}
-	if (temp.length()  > 1)
+	}*/
+
+	if (temp.size()>1)
 	{
-		fin.get();
+		//fin.get();
 		getline(fin, temp, '\n');
 		return NULL;
 	}
+
 	if (!isdigit(int(unsigned char(temp.front()))))
 	{
 		fin.get();
@@ -30,36 +52,47 @@ Filippov::Language *Filippov::Language_Input(ifstream &fin)
 	}
 	int state = stoi(temp);
 
-	fin >> temp;
-	if (temp == "\0")
+	getline(fin, temp, '\n');
+	line.clear();
+	line.str(temp);
+
+	//fin >> temp;
+	line >> temp;
+
+//Больше этот отдельный случай не требуется
+	/*if (temp == "\0")
 	{
 		return false;
 	}
+	*/
 	if (temp.length() != 4)
 	{
-		getline(fin, temp, '\n');
+		//getline(fin, temp, '\n');
 		return NULL;
 	}
 	for (auto iter = temp.begin(); iter != temp.end(); ++iter)
 	{
 		if (!isdigit(int(unsigned char(*iter))))
 		{
-			getline(fin, temp, '\n');
+			//getline(fin, temp, '\n');
 			return NULL;
 		}
 	}
+	
+
 	language->year_of_development = stoul(temp);
 
-	fin >> temp;
-	if (temp == "\0")
-	{
-		return false;
-	}
+	//fin >> temp;
+	line >> temp;
+	//if (temp == "\0")
+	//{
+	//	return false;
+	//}
 	for (auto iter = temp.begin(); iter != temp.end(); ++iter)
 	{
 		if (!isdigit(int(unsigned char(*iter))))
 		{
-			getline(fin, temp, '\n');
+			//getline(fin, temp, '\n');
 			return NULL;
 		}
 	}
@@ -68,43 +101,57 @@ Filippov::Language *Filippov::Language_Input(ifstream &fin)
 	switch (state)
 	{
 	case 1:
-		proc = new Procedural;
+		//proc = new Procedural;
 		language->key = Language::lang::PROCEDURAL;
-		proc = (Procedural *)language;
-		if (!Procedural_Input(*proc, fin))
+		proc = unique_ptr<Procedural>((Procedural*)language.release());
+
+		//if (!Procedural_Input(*proc, fin))
+		if (!Procedural_Input(*proc, line))
 		{
 			return NULL;
 		}
 		else
 		{
-			return language;
+			//return language;
+			//language = unique_ptr<Language>((Language*)proc.release());
+			return proc;
 		}
+												
 	case 2:
-		oop = new Object_Oriented;
+		//oop = new Object_Oriented;
 		language->key = Language::lang::OOP;
-		oop = (Object_Oriented *)language;
-		if (!Object_Oriented_Input(*oop, fin))
+		//oop = (Object_Oriented *)language;
+		oop = unique_ptr<Object_Oriented>((Object_Oriented*)language.release());
+		//if (!Object_Oriented_Input(*oop, fin))
+		if (!Object_Oriented_Input(*oop, line))
 		{
 			return NULL;
 		}
 		else
 		{
-			return language;
+			//language = unique_ptr<Language>((Language*)oop.release());
+			return oop;
 		}
 	case 3:
-		func = new Functional;
+		//func = new Functional;
 		language->key = Language::lang::FUNCTIONAL;
-		func = (Functional *)language;
-		if (!Functional_Input(*func, fin))
+		//func = (Functional *)language;
+		func = unique_ptr<Functional>((Functional*)language.release());
+		//if (!Functional_Input(*func, fin))
+		if (!Functional_Input(*func, line))
 		{
+		//Честно - не знаю, но нужно очистить самому
+			func.release();
 			return NULL;
 		}
 		else
 		{
-			return language;
+			//language = unique_ptr<Language>((Language*)func.release());
+			return func;
 		}
+												
 	default:
-		getline(fin, temp, '\n');
+		//getline(fin, temp, '\n');
 		return NULL;
 	}
 }
@@ -137,7 +184,8 @@ int Filippov::Past_Years(Language &obj)
 	return 1900 + localtm->tm_year - obj.year_of_development;
 }
 
-bool Filippov::Compare(Language *first, Language *second)
+//bool Filippov::Compare(Language *first, Language *second)
+bool Filippov::Compare(shared_ptr<void> first, shared_ptr<void> second)
 {
 	if (first == NULL && second != NULL)
 	{
@@ -151,8 +199,10 @@ bool Filippov::Compare(Language *first, Language *second)
 	{
 		return false;
 	}
-	if (first != NULL && second != NULL)
+//Лучше сделать так, чтобы был возрат результата в любом случаи
+	/*if (first != NULL && second != NULL)
 	{
 		return Past_Years(*first) < Past_Years(*second);
-	}
+	}*/
+	return Past_Years(*(Language*)(first.get())) < Past_Years(*(Language*)(second.get()));
 }

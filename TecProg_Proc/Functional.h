@@ -25,7 +25,8 @@ namespace Filippov
 		} type;
 	};
 
-	bool Functional_Input(Functional &obj, ifstream &fin);
+	//bool Functional_Input(Functional &obj, ifstream &fin);
+	bool Functional_Input(Functional& obj, stringstream& fin);
 	void Functional_Output(Functional &obj, ofstream &fout);
 }
 

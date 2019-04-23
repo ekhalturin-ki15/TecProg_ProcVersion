@@ -20,7 +20,8 @@ namespace Filippov
 		bool abstract_type;
 	};
 
-	bool Procedural_Input(Procedural &obj, ifstream &fin);
+	//bool Procedural_Input(Procedural &obj, ifstream &fin);
+	bool Procedural_Input(Procedural& obj, stringstream& fin);
 	void Procedural_Output(Procedural &obj, ofstream &fout);
 }
 
