@@ -11,7 +11,7 @@ bool Filippov::Procedural_Input(Procedural& obj, stringstream& fin)
 	{
 		return false;
 	}*/
-	if (temp.length() > 1)
+	if (temp.length() != 1)
 	{
 		return false;
 	}

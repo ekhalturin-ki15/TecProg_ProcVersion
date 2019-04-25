@@ -4,6 +4,13 @@
 #include <string>
 #include <sstream>
 
+
+shared_ptr<void> Deleter(unique_ptr<Filippov::Functional>& func1)
+{
+	unique_ptr<Filippov::Functional> func2;
+	func2 = unique_ptr<Filippov::Functional>(func1.release());
+	return func2;
+}
 //Filippov::Language *Filippov::Language_Input(ifstream &fin)
 //Придётся сделать void*, иначе, размеры не состыкуются
 shared_ptr<void> Filippov::Language_Input(ifstream& fin)
@@ -22,14 +29,14 @@ shared_ptr<void> Filippov::Language_Input(ifstream& fin)
 	unique_ptr<Functional> func;
 	string temp;
 
-//Самому парсить строку и делать проверки неудобно
-//Воспользуемся с++ streamstring
+	//Самому парсить строку и делать проверки неудобно
+	//Воспользуемся с++ streamstring
 	stringstream line;
 	getline(fin, temp, '\n');
 	line.str(temp);
-//Всё, у нас есть буффер для считывания, и за его пределы мы не выйдём
+	//Всё, у нас есть буффер для считывания, и за его пределы мы не выйдём
 
-	//fin >> temp;
+		//fin >> temp;
 	line >> temp;
 
 	/*if (temp == "\0")
@@ -37,7 +44,7 @@ shared_ptr<void> Filippov::Language_Input(ifstream& fin)
 		return false;
 	}*/
 
-	if (temp.size()>1)
+	if (temp.size() != 1)
 	{
 		//fin.get();
 		getline(fin, temp, '\n');
@@ -59,12 +66,12 @@ shared_ptr<void> Filippov::Language_Input(ifstream& fin)
 	//fin >> temp;
 	line >> temp;
 
-//Больше этот отдельный случай не требуется
-	/*if (temp == "\0")
-	{
-		return false;
-	}
-	*/
+	//Больше этот отдельный случай не требуется
+		/*if (temp == "\0")
+		{
+			return false;
+		}
+		*/
 	if (temp.length() != 4)
 	{
 		//getline(fin, temp, '\n');
@@ -78,7 +85,7 @@ shared_ptr<void> Filippov::Language_Input(ifstream& fin)
 			return NULL;
 		}
 	}
-	
+
 
 	language->year_of_development = stoul(temp);
 
@@ -116,7 +123,7 @@ shared_ptr<void> Filippov::Language_Input(ifstream& fin)
 			//language = unique_ptr<Language>((Language*)proc.release());
 			return proc;
 		}
-												
+
 	case 2:
 		//oop = new Object_Oriented;
 		language->key = Language::lang::OOP;
@@ -140,8 +147,8 @@ shared_ptr<void> Filippov::Language_Input(ifstream& fin)
 		//if (!Functional_Input(*func, fin))
 		if (!Functional_Input(*func, line))
 		{
-		//Честно - не знаю, но нужно очистить самому
-			func.release();
+			//Честно - не знаю, но нужно очистить самому
+			//Теперь знаю, нельзя удалять наполовину заполненую структуру, различия в размере
 			return NULL;
 		}
 		else
@@ -149,7 +156,7 @@ shared_ptr<void> Filippov::Language_Input(ifstream& fin)
 			//language = unique_ptr<Language>((Language*)func.release());
 			return func;
 		}
-												
+
 	default:
 		//getline(fin, temp, '\n');
 		return NULL;

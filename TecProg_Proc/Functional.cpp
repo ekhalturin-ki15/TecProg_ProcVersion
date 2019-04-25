@@ -11,7 +11,7 @@ bool Filippov::Functional_Input(Functional& obj, stringstream& fin)
 	{
 		return false;
 	}*/
-	if (temp.length() > 1)
+	if (temp.length() != 1)
 	{
 		//getline(fin, temp, '\n');
 		return false;
@@ -23,14 +23,15 @@ bool Filippov::Functional_Input(Functional& obj, stringstream& fin)
 	}
 
 	int state = stoi(temp);
-	if (state > 0)
+	// Перенесём в конец, иначе, на половину заполненую структуру нельзя удалить !!!!!!!!!!!!
+	/*if (state > 0)
 	{
-		obj.lazy_calculations = true;
+		obj->lazy_calculations = true;
 	}
 	else
 	{
-		obj.lazy_calculations = false;
-	}
+		obj->lazy_calculations = false;
+	}*/
 
 	fin >> temp;
 	/*if (temp == "\0")
@@ -51,13 +52,23 @@ bool Filippov::Functional_Input(Functional& obj, stringstream& fin)
 	{
 	case 1:
 		obj.type = Functional::typification::STRICT;
-		return true;
+		break;
 	case 2:
 		obj.type = Functional::typification::DYNAMIC;
-		return true;
+		break;
 	default:
 		return false;
 	}
+
+	if (state > 0)
+	{
+		obj.lazy_calculations = true;
+	}
+	else
+	{
+		obj.lazy_calculations = false;
+	}
+	return true;
 }
 
 void Filippov::Functional_Output(Functional &obj, ofstream &fout)

@@ -11,7 +11,7 @@ bool Filippov::Object_Oriented_Input(Object_Oriented& obj, stringstream& fin)
 	{
 		return false;
 	}*/
-	if (temp.length() > 1)
+	if (temp.length() != 1)
 	{
 		return false;
 	}
